@@ -1,0 +1,44 @@
+@import '../../../assets/styles/variables.scss';
+
+.main-section {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+
+    .line {
+        margin: 20px 0;
+        background-color: black;
+        width: 60px;
+        height: 6px;
+    }
+    h1 {
+        margin-top: 40px;
+        font-family: 'Gotham';
+        font-size: 25px;
+        font-weight: 900;
+    }
+    p{
+        font-family: 'Gotham';
+        margin: 40px 0;
+    }
+
+    .form-wrapper {
+        padding: 15px;
+        width: 100%;
+        border: 3px solid $border-light-grey;
+        color: $light-grey;
+        border-radius: 4px;
+        .sub-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h4 {
+                font-family: 'Gotham';
+                font-weight: 500;
+            }
+            img {
+                height: 25px;
+            }
+        }
+    }
+}
