@@ -1,0 +1,34 @@
+@import '../../../assets/styles/variables.scss';
+.sessao {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    .legend-container {
+        margin-top: 20px;
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        font-family: 'Gotham';
+        justify-content: space-evenly;
+        background-color: $border-light-grey;
+        flex-wrap: wrap;
+        .object {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .legend-wrap{
+            display: flex;
+            gap: 10px;
+            .info-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+img {
+    width: 60px;
+}
