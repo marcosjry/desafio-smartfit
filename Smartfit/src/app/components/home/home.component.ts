@@ -3,6 +3,7 @@ import { HeaderComponent } from '../header/header.component';
 import { PrimaryFormComponent } from '../primary-form/primary-form.component';
 import { LegendBarComponent } from '../legend-bar/legend-bar.component';
 import { FilteredSearchComponent } from '../filtered-search/filtered-search.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { FilteredSearchComponent } from '../filtered-search/filtered-search.comp
     HeaderComponent,
     PrimaryFormComponent,
     LegendBarComponent,
-    FilteredSearchComponent
+    FilteredSearchComponent,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
