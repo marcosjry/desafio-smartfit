@@ -1,0 +1,24 @@
+
+<div  class="filter-container">
+    <div *ngFor="let dados of data" class="filter-card">
+        <h4 [ngClass]="dados.opened ? 'opened' : 'closed'">{{dados.opened ? 'Aberto' : 'Fechado'}}</h4> 
+        <h2>{{dados.title}}</h2>
+        <p [innerHTML]="dados.content">a</p>  
+        <div *ngIf="dados.opened">
+            <div class="line"></div>
+                <div class="image-card">
+                    <img [src]="'assets/img/'+ dados.mask +'-mask.png'">
+                    <img [src]="'assets/img/'+ dados.towel +'-towel.png'">
+                    <img [src]="'assets/img/'+ dados.fountain +'-fountain.png'">
+                    <img [src]="'assets/img/'+ dados.locker_room +'-locker_room.png'">
+                </div>
+            <div  class="days-info">
+                <div *ngFor="let weekday of dados.schedules" class="info">
+                    <h3>{{weekday.weekdays}}</h3>
+                    <p>{{weekday.hour}}</p>
+                </div> 
+            </div>    
+        </div>
+    </div>
+    
+</div>
