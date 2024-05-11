@@ -27,19 +27,6 @@ form {
 
     .divider {
         border-top: 2px solid $border-light-grey;
-        input[type="checkbox"] {
-            margin-top: 2px;
-            width: 15px;
-            height: 15px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            border: 1.5px solid #474747;
-            -webkit-appearance: none;
-            cursor:pointer;
-        }
-        input[type="checkbox"]:checked {
-            background-color: $yellow;
-        }
         &:nth-last-child(3)   {
             border-bottom: 2px solid $border-light-grey;
         }
