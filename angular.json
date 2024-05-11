@@ -27,8 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/_redirects"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -88,11 +87,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/assets/fonts/Gotham/gotham-light.woff2",
-              "src/assets/fonts/Gotham/gotham-book.woff2",
-              "src/assets/fonts/Gotham/gotham-black.woff2",
-              "src/assets/fonts/Gotham/gotham-bold.woff2"
+              "src/assets"
+        
             ],
             "styles": [
               "src/styles.scss"
