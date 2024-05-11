@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/fonts/gotham/gotham-black.woff2",
+              "src/assets/fonts/gotham/gotham-bold.woff2",
+              "src/assets/fonts/gotham/gotham-book.woff2",
+              "src/assets/fonts/gotham/gotham-light.woff2"
+
             ],
             "styles": [
               "src/styles.scss"

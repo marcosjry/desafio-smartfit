@@ -62,3 +62,13 @@
         }
     }
 }
+
+@media (max-width:500px) {
+    .filter-container {
+        width: 95%;
+    
+        .filter-card {
+            width: 100%;
+        }
+    }
+}

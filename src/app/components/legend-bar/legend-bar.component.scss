@@ -33,3 +33,9 @@
 img {
     width: 60px;
 }
+
+@media (max-width:500px) {
+    .sessao {
+        width: 95%;
+    }
+}

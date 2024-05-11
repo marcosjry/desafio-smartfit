@@ -42,3 +42,9 @@
         }
     }
 }
+
+@media (max-width:500px) {
+    .main-section {
+        max-width: 95%;
+    }
+}
