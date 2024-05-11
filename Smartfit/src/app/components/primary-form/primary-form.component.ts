@@ -3,24 +3,11 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { LocalSearchService } from '../../services/localsearch/local-search.service';
 import { Location} from '../../types/location.interface';
 import { FilteredSearchComponent } from '../filtered-search/filtered-search.component';
+import { ShareDataService } from '../../services/sharedata/share-data.service';
 
 
 
-type hour_index = 'morning' | 'afternoon' | 'night';
-const opening_hours = {
-  morning: {
-    first: '06',
-    last: '12'
-  },
-  afternoon: {
-    first: '12',
-    last: '18'
-  },
-  night: {
-    first: '18',
-    last: '23'
-  }
-}
+
 
 @Component({
   selector: 'app-primary-form',
@@ -44,7 +31,8 @@ export class PrimaryFormComponent {
 
  constructor(
     private searchService: LocalSearchService, 
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private filterAndUpdate: ShareDataService
   ){}
 
   ngOnInit() {
@@ -57,45 +45,15 @@ export class PrimaryFormComponent {
     })
   }
 
-  searchFilter(local: Location, open_Hour: string, close_Hour: string) {
-    if(!local.schedules) return true;
-    let filteredOpen_hour = parseInt(open_Hour, 10)
-    let filteredClose_hour = parseInt(close_Hour, 10)
 
-    for(let i=0; i < local.schedules.length; i++) {
-      let schedule_hour = local.schedules[i].hour
-      //let schedule_weekday = local.schedules[i].weekdays
-      if(schedule_hour !== 'Fechada') {
-        let [local_openHour, local_closeHour] = schedule_hour.split(' às ')
-        let local_openHourInt = parseInt(local_openHour.replace('h', ''), 10)
-        let local_closeHourInt = parseInt(local_closeHour.replace('h', ''), 10)
-
-        if(local_openHourInt  >= filteredOpen_hour && local_closeHourInt >= filteredClose_hour) return true;
-        else return false
-      }
-
-    }
-    return false
-  }
 
   onClick() {
-    let tempResult = this.result;
-
-    if(!this.formGroup.value.showClosed) {
-      tempResult = this.result.filter(dado => dado.opened === true);
-    }
-
-    if (this.formGroup.value.hour) {
-      const open_hour = opening_hours[this.formGroup.value.hour as hour_index].first
-      const close_hour = opening_hours[this.formGroup.value.hour as hour_index].last
-      this.filteredResults = tempResult.filter(location => this.searchFilter(location, open_hour, close_hour))  
-    } else {
-      this.filteredResults = tempResult;
-    }
-    console.log(this.filteredResults)
+    let { showClosed, hour } = this.formGroup.value
+    this.filteredResults = this.filterAndUpdate.filter(this.result, showClosed, hour)
+    this.filterAndUpdate.updateData(this.filteredResults);
   }
 
   onClean() {
-    console.log("clean")
+    this.formGroup.reset();
   }
 }
