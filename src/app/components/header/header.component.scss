@@ -1,9 +1,11 @@
+@import '../../../assets/styles/variables.scss';
+
 header {
     display: flex;
     background-color: black;
     justify-content: center;
     img {
-        height: 60px;
+        height: 70px;
         padding: 20px 0;
     }
 }

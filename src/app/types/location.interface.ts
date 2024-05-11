@@ -3,7 +3,7 @@ export interface searchResponse {
 }
   
 export interface Location {
-    id: number
+
     title: string
     content: string
     opened: boolean
