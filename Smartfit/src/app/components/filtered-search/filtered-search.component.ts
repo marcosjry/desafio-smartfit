@@ -31,7 +31,6 @@ export class FilteredSearchComponent {
   ngOnInit() {
     this.shareData.data.subscribe((dado) => {
       this.data = dado;
-      console.log(this.data)
     })
   }
 }
